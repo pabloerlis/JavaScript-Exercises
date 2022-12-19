@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>moedaBRL</title>
+    <script type="text/javascript">
+        function formataReais(valor) {
+            return valor.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })
+        }
+
+        const valor = parseFloat(prompt("Entre com um valor utilizando ponto caso seja necessário:"))
+        console.log(formataReais(valor))
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

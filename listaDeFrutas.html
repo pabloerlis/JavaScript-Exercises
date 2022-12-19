@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>listaDeFrutas</title>
+    <script type="text/javascript">
+        let frutas = ['Abacate', 'Abacaxi', 'Acai', 'Acerola', 'Amora', 'Araticum', 'Banana', 'Biriba', 'Cacau', 'Caja'];
+        //1- Descubra o tamanho do array e imprima no console
+        console.log(frutas.length);
+
+        //2- Remova os 5 primeiros elementos do array e imprima no console
+        frutas.splice(0, 5);
+        console.log(frutas);
+
+        //3- Adicione a fruta laranja antes da fruta cacau e imprima no console
+        frutas.splice(3, 0, 'Laranja');
+        console.log(frutas);
+
+        //4- E adicione mamão antes da fruta Araticum e imprima no console
+        frutas.splice(0, 0, 'Mamão');
+        console.log(frutas);
+
+        //5- Utilizando as funções de array crie 3 novos arrays separando pela letra inicial de cada fruta e imprima no console
+        frutas = ['Abacate', 'Abacaxi', 'Acai', 'Acerola', 'Amora', 'Araticum', 'Banana', 'Biriba', 'Cacau', 'Caja'];
+        let aFrutas = frutas.filter(fruta => fruta.startsWith("A"));
+        let bFrutas = frutas.filter(fruta => fruta.startsWith("B"));
+        let cFrutas = frutas.filter(fruta => fruta.startsWith("C"));
+
+        console.log(aFrutas);
+        console.log(bFrutas);
+        console.log(cFrutas);
+    </script>
+</head>
+
+<body>
+    <center>
+        <p>Pressione F12 para abrir o console</p>
+    </center>
+</body>
+
+</html>
