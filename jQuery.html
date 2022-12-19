@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-1.9.1.js"></script>
+    <script src="https://igorescobar.github.io/jQuery-Mask-Plugin/js/jquery.mask.min.js"></script>
+    <script type="text/javascript"></script>
+  </head>
+  <body>
+    <form action="" method="post">
+      <div>
+        <label for="nome">Nome:</label>
+        <input type="text" id="nome" />
+      </div>
+      <div>
+        <label for="email">E-mail:</label>
+        <input type="email" id="email" />
+      </div>
+      <div>
+        <label for="salario">Salário:</label>
+
+        <label for="salario">R$</label
+        ><input type="text" id="salario" style="display: inline-block" />
+      </div>
+      <div>
+        <label for="msg">Mensagem:</label>
+        <textarea id="msg"></textarea>
+      </div>
+      <div>
+        <label for="msg">alertar:</label>
+        <input type="checkbox" name="alertar" checked id="alert" />
+      </div>
+      <div>
+        <label for="msg">Enviar:</label>
+        <input type="button" name="alertar" value="Enviar" id="send" />
+      </div>
+    </form>
+  </body>
+  <script type="text/javascript">
+    $("#salario").mask("000.000.000.000.000,00", { reverse: true });
+
+    $("#send").prop("disabled", true);
+    $("#salario").on("keyup", function () {
+      if ($(this).val().length > 0) {
+        $("#send").prop("disabled", false);
+      } else {
+        $("#send").prop("disabled", true);
+      }
+    });
+
+    $("#send").click(function () {
+      if (
+        $("#nome").val().length > 1 &&
+        $("#nome").val().length > 1 &&
+        $("#msg").val().length > 1
+      ) {
+        console.log($("#nome").val());
+        console.log($("#email").val());
+        console.log($("#alert").prop("checked"));
+
+        if ($("#alert").is(":checked")) {
+          console.log("O usuário deve ser alertado");
+        } else {
+          console.log("O usuário não deseja ser alertado");
+        }
+      } else {
+        if ($("#nome").val().length < 1) {
+          $("#nome").css({ border: "1px solid red" });
+        }
+        if ($("#email").val().length < 1) {
+          $("#email").css({ border: "1px solid red" });
+        }
+        if ($("#msg").val().length < 1) {
+          $("#msg").css({ border: "1px solid red" });
+        }
+      }
+    });
+  </script>
+</html>
